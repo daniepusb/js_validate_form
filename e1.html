@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Georgina Palavecino - Curso Front End</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+    <div id="enunciado">
+        <h1>Ejercicio 1</h1>
+        <h2>Elija cuantos nombres desea ingresar</h2>
+        <form action="">
+            <input  type="number" name="primer__numero" id="primer__numero" required 
+            placeholder="Por favor insertar un numero entre 3 y 10" max="10" min="3" >
+            <button  class="btn"  id="guardar__cantidad__nombres" type="submit" >Guardar</button>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h2>Ingrese nombres</h2>
+        <form>
+            <div id="nombres"></div>
+            <button id="mostrar__resultado" class="btn" type="submit">Mostrar Resultado</button>
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h2>Estos son los nombres ingresados</h2>
+        <div>
+            <ul id="resultado"></ul>
+        </div>
+    </div>
+    
+    
+    <script src='script_e1.js'></script>
+</body>
+</html>
+
