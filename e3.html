@@ -9,26 +9,27 @@
 </head>
 <body>
     <div id="enunciado">
-        <h1>Ejercicio 1</h1>
-        <h2>Elija cuantos nombres desea ingresar</h2>
-        <form action="#">
-            <input class=""  type="number" name="primer__numero" id="primer__numero" required 
-            placeholder="Por favor insertar un numero entre 3 y 10" max="10" min="3" >
-            <button type="submit">Guardar</button>
+        <h1>Ejercicio 3</h1>
+        <h2>Seleccione una opción</h2>
+        <form>
+            <select name="" id="seleccion" required >
+                <option value="0" selected disabled >Elija una opcion</option>
+                <option value="suma">Suma</option>
+                <option value="resta">Resta</option>
+                <option value="multiplicacion">Multiplicacion</option>
+            </select>
+            <br>
+            <input type="number" name="" id="primer__numero" min="1" required >
+            <input type="number" name="" id="segundo__numero" min="1" required>
+            
+            <button hidden class="btn"  id="" type="submit" >Validar</button>
+            <button  class="btn"  id="ejecutar__seleccion" type="button" >Ejecutar</button>
         </form>
+            
     </div>
-    <div id="nombres">
-        <input type="text" name="nombres__persona" required>
-        <input type="text" name="nombres__persona" required>
-        <input type="text" name="nombres__persona" required>
-    </div>
-    <div id="resultado">
-        <h2>Estos son los nombres ingresados</h2>
-        <ul>
-            <li><span>nombre1</span></li>
-            <li><span>nombre2</span></li>
-            <li><span>nombre3</span></li>
-        </ul>
+    <div>
+        <h2>Resultado </h2>
+        <div id="resultado"></div>
     </div>
     
     
