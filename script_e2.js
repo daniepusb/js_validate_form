@@ -9,6 +9,9 @@ let ul__resultado   = document.getElementById("resultado")
 
 /* Mostrar valores guardados en array__valores */
 function mostrarValores(){
+    //Reinicio lo que está en resultado
+    ul__resultado.innerHTML = ""
+    //recorro el arreglo y añado en resultado
     for (let index = 0; index < array__valores.length; index++) {
         let new__li         = document.createElement("li")
         new__li.innerHTML   = array__valores[index]
@@ -22,8 +25,7 @@ function mostrarValores(){
 function buscarPares(){
     index__array    = 0
     
-    for (let index = index__MIN; index < index__MAX; index++) {
-        console.log(index)
+    for (let index = index__MIN; index <= index__MAX; index++) {
         if (esMultiploDeCinco(index) && esPar(index) ){
             array__valores[index__array]=index
             index__array++
@@ -37,8 +39,7 @@ function buscarPares(){
 function buscarImpares(){
     index__array    = 0
     
-    for (let index = index__MIN; index < index__MAX; index++) {
-        console.log(index)
+    for (let index = index__MIN; index <= index__MAX; index++) {
         if (esMultiploDeCinco(index) && esImpar(index) ){
             array__valores[index__array]=index
             index__array++
@@ -48,14 +49,22 @@ function buscarImpares(){
 }
 
 /* funcion para obtener la opcion que se eligió: par o impar */
-function guardarSeleccion(e){
-    console.log(e)
+function guardarSeleccion(){
     let seleccion = document.getElementsByName("seleccion")
-    console.log(seleccion[0])
-    console.log(seleccion[1])
+    console.log(seleccion[0].checked, seleccion[0].id)
+    console.log(seleccion[1].checked, seleccion[1].id)
     
-    if (es__par) {buscarPares()}
-    else{buscarImpares()}
+    //primero preguntamos si alguna está seleccionada
+    if (seleccion[0].checked && seleccion[0].id == "radio__btn__impar" ){
+        es__par = false
+        buscarImpares()
+    }else if(seleccion[1].checked && seleccion[1].id == "radio__btn__par" ){
+        es__par = true
+        buscarPares()
+    }else{
+        //posiblemente mostrar un error
+        console.log("Se debe elegir una opcion")
+    }
 }
 
 
@@ -88,7 +97,7 @@ function cargaInicial(){
     let btn__guardar = document.getElementById("guardar__eleccion");
     btn__guardar.addEventListener("click", function(event){
         event.preventDefault();
-        guardarSeleccion(event);
+        guardarSeleccion();
     });
 }
 

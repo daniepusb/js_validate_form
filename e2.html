@@ -10,27 +10,22 @@
 <body>
     <div id="enunciado">
         <h1>Ejercicio 2</h1>
-        <h2>Elija una opción</h2>
+        <h2>Elija una opción (par o impar)</h2>
         <form action="#">
             <label class="radio-inline">
-                <input type="radio" name="seleccion" id="radio__btn__impar" value="1">
+                <input required type="radio" name="seleccion" id="radio__btn__impar" value="1">
                 <span class="">impar</span>
             </label>
             <label class="radio-inline">
-                <input type="radio" name="seleccion" id="radio__btn__impar" value="2">
+                <input required type="radio" name="seleccion" id="radio__btn__par" value="2">
                 <span class="">par</span>
             </label>
             <button type="submit" id="guardar__eleccion">Guardar</button>
         </form>
     </div>
-    <div id="resultado">
+    <div>
         <h2>Este son los números encontrados</h2>
-        <ul>
-            <li><span>5</span></li>
-            <li><span>10</span></li>
-            <li><span>15</span></li>
-            <li><span>...</span></li>
-            <li><span>100</span></li>
+        <ul id="resultado">
         </ul>
     </div>
     
